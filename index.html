@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>単語帳アプリ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>📘 単語帳アプリ</h1>
+
+  <input type="text" id="english" placeholder="英単語（例：apple）" />
+  <input type="text" id="japanese" placeholder="日本語訳（例：りんご）" />
+  <button onclick="addWord()">追加</button>
+
+  <ul id="wordList"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
