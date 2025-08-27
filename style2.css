@@ -1,0 +1,99 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  color: #f00;
+}
+input {
+  margin: 5px;
+  padding: 8px;
+}
+button {
+  padding: 8px 16px;
+  margin: 5px 0;
+}
+li {
+  margin: 4px 0;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  width: auto;
+  max-width: 400px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #f0f8ff; /* 薄い水色などに変化 */
+  cursor: pointer;
+}
+
+
+/* 外枠：3Dの視点を与える */
+.flip {
+  width: 280px;
+  height: 160px;
+  margin: 24px auto;
+  perspective: 1000px; /* ここが要。親に付ける */
+  cursor: pointer;
+}
+
+/* 回転させる内側 */
+.flip__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  will-change: transform;
+  transform-style: preserve-3d;              /* 3Dを保つ */
+  -webkit-transform-style: preserve-3d;      /* Safari */
+}
+
+/* 表・裏の共通 */
+.flip__face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  backface-visibility: hidden;               /* 裏面を隠す */
+  -webkit-backface-visibility: hidden;       /* Safari */
+  transform: translateZ(0);                  /* Safariの描画安定化 */
+}
+
+/* 表面 */
+.flip__front {
+  /* そのまま */
+}
+
+/* 裏面：180度回して待機 */
+.flip__back {
+  transform: rotateY(180deg) translateZ(0);
+  background: #f8fff4; /* 背景を変えると裏面が分かりやすい */
+}
+
+/* 反転状態 */
+.flip.is-flipped .flip__inner {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);        /* Safari */
+}
+
+/* お好み：小さめ画面でのサイズ調整 */
+@media (max-width: 480px) {
+  .flip { width: 90vw; height: 52vw; max-width: 340px; max-height: 200px; }
+}
+
+/* 動きが苦手なユーザー配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .flip__inner { transition: none; }
+}
