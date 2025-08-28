@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+
+  <title>単語帳アプリ</title>
+  <!-- <link rel="stylesheet" href="./style.css" /> -->
+  <link rel="stylesheet" href="./style2.css" />
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+  const flip = document.querySelector('.flip');
+
+  function toggleFlip() {
+    const on = flip.classList.toggle('is-flipped');
+    flip.setAttribute('aria-pressed', String(on));
+  }
+
+  flip.addEventListener('click', toggleFlip);
+  flip.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleFlip();
+    }
+  });
+</script>
+
+
+</head>
+<body>
+    <div class="card">
+        <h3>banana</h3>
+        <p>バナナ</p>
+    </div>
+
+    <div class="flip" role="button" aria-pressed="false" tabindex="0">
+        <div class="flip__inner">
+            <div class="flip__face flip__front">
+                単語: apple
+            </div>
+            <div class="flip__face flip__back">
+                意味: りんご
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a href="index.html">HOME</a>
+    </div>
+
+</body>
+</html>
