@@ -8,19 +8,27 @@
   
 
   <title>単語帳アプリ</title>
-  <!-- <link rel="stylesheet" href="./style.css" /> -->
   <link rel="stylesheet" href="card_style.css" />
   <link rel="manifest" href="manifest.json">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kiwi+Maru&family=Kosugi+Maru&family=M+PLUS+1p&family=M+PLUS+Rounded+1c&family=Rampart+One&family=WDXL+Lubrifont+JP+N&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="card">
-        <h3>apple</h3>
-        <p>りんご</p>
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card">
+            <div class="front">表：Apple</div>
+            <div class="back">裏：りんご</div>
+        </div>
     </div>
 
-    <div>
+
+    <div class="nav">
+        <a href="#">＜＜</a>
         <a href="index.html">HOME</a>
+        <a href="#">＞＞</a>
     </div>
 
 </body>
