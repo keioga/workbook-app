@@ -1,0 +1,26 @@
+body{
+    background-color : #eeeeff;
+}
+.set-word{
+    background-color : #ffffff;
+    width : 90%;
+    margin:auto;
+    padding : 10px;
+    margin-bottom : 10px;
+}
+
+.learn-word{
+    background-color : #ffffff;
+    width : 90%;
+    margin:auto;
+    padding : 10px;
+}
+
+h1 , h2{
+    text-align : center;
+}
+
+.tocard{
+    margin : 10px;
+    text-align : center;
+}
